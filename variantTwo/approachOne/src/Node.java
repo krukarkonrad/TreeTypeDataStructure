@@ -26,12 +26,8 @@ public class Node {
         );
     }
 
-    public static int getIndexCount() {
+    public static int getSize() {
         return indexCount;
-    }
-
-    public static void setIndexCount(int indexCount) {
-        Node.indexCount = indexCount;
     }
 
     public int getIndex() {

@@ -17,25 +17,43 @@ public class Tree {
         this.root = root;
     }
 
-    public Node findNodeWithIndex(Node node, int index){
-        return findNodeWithIndexRecursion(node, index);
+
+    public Node findNodeByIndex(int index){
+        return findNodeByIndexRecursion(this.root, index);
     }
 
-        private Node findNodeWithIndexRecursion(Node node, int index){
-            System.out.println("Sprawdzam node: " + node.getIndex());
+        private Node findNodeByIndexRecursion(Node node, int index){
             if(node.getIndex() == index){
-                System.out.println("Pasuje " + node.getIndex());
                 return node;
             }
             Node toReturn = null;
             if(node.getLeftSubNode() != null){
-                toReturn = findNodeWithIndexRecursion(node.getLeftSubNode(), index);
+                toReturn = findNodeByIndexRecursion(node.getLeftSubNode(), index);
                 if(toReturn != null) return toReturn;
             }
             if(node.getRightSubNode() != null){
-                toReturn = findNodeWithIndexRecursion(node.getRightSubNode(),index);
+                toReturn = findNodeByIndexRecursion(node.getRightSubNode(),index);
                 if(toReturn != null) return toReturn;
             }
             return toReturn;
         }
+
+
+    public int sumSubtreeByIndex(int index){
+        Node subtree = this.findNodeByIndex(index);
+        return sumSubtree(subtree);
+    }
+
+        private int sumSubtree(Node node){
+            int counter = 0;
+            if(node.getLeftSubNode() != null){
+                counter += sumSubtree(node.getLeftSubNode());
+            }
+            if(node.getRightSubNode() != null){
+                counter += sumSubtree(node.getRightSubNode());
+            }
+            return node.getValue() + counter;
+        }
+
+
 }

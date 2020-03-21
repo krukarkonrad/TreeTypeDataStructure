@@ -4,7 +4,7 @@ public class Main {
 
         Tree tree = new Tree();
 
-        tree.root = new Node(5);
+        tree.setRoot(new Node(5));
 
         //L0
         tree.root.setLeftSubNode(new Node(3));
@@ -22,9 +22,7 @@ public class Main {
         tree.root.getRightSubNode().getRightSubNode().getRightSubNode().setRightSubNode(new Node(5));
 
         System.out.println(
-                tree.root.toString() +
-                "\n" +tree.findNodeWithIndex(tree.root, 9)
-
+                tree.sumSubtreeByIndex(6)
         );
 
 
