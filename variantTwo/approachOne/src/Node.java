@@ -4,24 +4,25 @@ public class Node {
 
     private int index;
     private int value;
-    private Node leftNode ;
-    private Node rightNode;
+    private Node leftSubNode ;
+    private Node rightSubNode;
 
     public Node(int value){
         this.index = indexCount;
         indexCount++;
 
         this.value = value;
-        this.leftNode = null;
-        this.rightNode = null;
+        this.leftSubNode = null;
+        this.rightSubNode = null;
     }
 
     @Override
     public String toString(){
-        return ("Node with index: " + index +
-                " value: " + this.value +
-                "\nleftNode: " + this.leftNode +
-                "\nrightNode: " + this.rightNode
+
+        return ("Node " + index +
+                "\n{value: " + this.value +
+                " left"+index+"Node: " + this.leftSubNode +
+                " right"+index+"Node: " + this.rightSubNode + "}"
         );
     }
 
@@ -49,19 +50,21 @@ public class Node {
         this.value = value;
     }
 
-    public Node getLeftNode() {
-        return leftNode;
+    public Node getLeftSubNode() {
+        return leftSubNode;
     }
 
-    public void setLeftNode(Node leftNode) {
-        this.leftNode = leftNode;
+    public void setLeftSubNode(Node leftNode) {
+        this.leftSubNode = leftNode;
     }
 
-    public Node getRightNode() {
-        return rightNode;
+    public Node getRightSubNode() {
+        return rightSubNode;
     }
 
-    public void setRightNode(Node rightNode) {
-        this.rightNode = rightNode;
+    public void setRightSubNode(Node rightNode) {
+        this.rightSubNode = rightNode;
     }
+
+
 }
