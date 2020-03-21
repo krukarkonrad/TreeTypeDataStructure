@@ -45,15 +45,29 @@ public class Tree {
     }
 
         private int sumSubtree(Node node){
-            int counter = 0;
+            int sum = 0;
             if(node.getLeftSubNode() != null){
-                counter += sumSubtree(node.getLeftSubNode());
+                sum += sumSubtree(node.getLeftSubNode());
             }
             if(node.getRightSubNode() != null){
-                counter += sumSubtree(node.getRightSubNode());
+                sum += sumSubtree(node.getRightSubNode());
             }
-            return node.getValue() + counter;
+            return node.getValue() + sum;
         }
 
+    public double averageValueByIndex(int index){
+        Node temp = findNodeByIndex(index);
+        return (double)sumSubtree(temp)/(double)sizeOfTree(temp);
+    }
 
+        private int sizeOfTree(Node node){
+            int counter = 0;
+            if(node.getLeftSubNode() != null){
+                counter += sizeOfTree(node.getLeftSubNode());
+            }
+            if(node.getRightSubNode() != null){
+                counter += sizeOfTree(node.getRightSubNode());
+            }
+            return counter + 1;
+        }
 }

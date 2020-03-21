@@ -22,7 +22,7 @@ public class Main {
         tree.root.getRightSubNode().getRightSubNode().getRightSubNode().setRightSubNode(new Node(5));
 
         System.out.println(
-                tree.sumSubtreeByIndex(6)
+                tree.averageValueByIndex(4)
         );
 
 
