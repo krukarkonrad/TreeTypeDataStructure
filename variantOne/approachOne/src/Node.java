@@ -26,16 +26,8 @@ public class Node {
         );
     }
 
-    public static int getSize() {
-        return indexCount;
-    }
-
     public int getIndex() {
         return index;
-    }
-
-    public void setIndex(int index) {
-        this.index = index;
     }
 
     public int getValue() {
@@ -50,16 +42,16 @@ public class Node {
         return leftSubNode;
     }
 
-    public void setLeftSubNode(Node leftNode) {
-        this.leftSubNode = leftNode;
+    public void setLeftSubNode(int value) {
+        this.leftSubNode = new Node(value);
     }
 
     public Node getRightSubNode() {
         return rightSubNode;
     }
 
-    public void setRightSubNode(Node rightNode) {
-        this.rightSubNode = rightNode;
+    public void setRightSubNode(int value) {
+        this.rightSubNode = new Node(value);
     }
 
 

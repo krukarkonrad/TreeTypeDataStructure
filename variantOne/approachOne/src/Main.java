@@ -2,29 +2,24 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Tree tree = new Tree();
-
-        tree.setRoot(new Node(5));
+        Tree tree = new Tree(5);
 
         //L0
-        tree.root.setLeftSubNode(new Node(3));
-        tree.root.getLeftSubNode().setLeftSubNode(new Node(2));
-        tree.root.getLeftSubNode().setRightSubNode(new Node(5));
+        tree.root.setLeftSubNode(3);
+        tree.root.getLeftSubNode().setLeftSubNode(2);
+        tree.root.getLeftSubNode().setRightSubNode(5);
 
         //R0
-        tree.root.setRightSubNode(new Node(7));
-        tree.root.getRightSubNode().setLeftSubNode(new Node(1));
-        tree.root.getRightSubNode().setRightSubNode(new Node(0));
+        tree.root.setRightSubNode(7);
+        tree.root.getRightSubNode().setLeftSubNode(1);
+        tree.root.getRightSubNode().setRightSubNode(0);
         //R1
-        tree.root.getRightSubNode().getRightSubNode().setLeftSubNode(new Node(2));
-        tree.root.getRightSubNode().getRightSubNode().setRightSubNode(new Node(8));
+        tree.root.getRightSubNode().getRightSubNode().setLeftSubNode(2);
+        tree.root.getRightSubNode().getRightSubNode().setRightSubNode(8);
         //R2
-        tree.root.getRightSubNode().getRightSubNode().getRightSubNode().setRightSubNode(new Node(5));
+        tree.root.getRightSubNode().getRightSubNode().getRightSubNode().setRightSubNode(5);
 
-        System.out.println(
-                tree.medianValueByIndex(4)
-        );
-
+        Menu.showMenu(tree);
 
     }
 }

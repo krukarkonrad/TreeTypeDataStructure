@@ -13,18 +13,9 @@ public class Tree {
         root = null;
     }
 
-    public Node getRoot() {
-        return root;
-    }
-
-    public void setRoot(Node root) {
-        this.root = root;
-    }
-
-
-    public Node findNodeByIndex(int index){
-        return findNodeByIndexRecursion(this.root, index);
-    }
+        private Node findNodeByIndex(int index){
+            return findNodeByIndexRecursion(this.root, index);
+        }
 
         private Node findNodeByIndexRecursion(Node node, int index){
             if(node.getIndex() == index){
