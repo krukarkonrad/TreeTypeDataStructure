@@ -92,5 +92,8 @@ public class Tree {
             return temp;
         }
 
-
+    @Override
+    public String toString() {
+        return this.root.toString();
+    }
 }

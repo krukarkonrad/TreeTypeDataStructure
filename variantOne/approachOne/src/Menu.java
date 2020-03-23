@@ -12,7 +12,9 @@ public class Menu {
             System.out.println("2 - AVG from subtree");
             System.out.println("3 - Median from subtree");
             System.out.println("0 - Leave");
+
             choice = Integer.parseInt(in.nextLine());
+
             if(choice != 0){
                 System.out.print("Give an index of subtree: ");
                 index = Integer.parseInt(in.nextLine());
