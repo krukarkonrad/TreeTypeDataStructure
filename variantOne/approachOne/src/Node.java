@@ -54,5 +54,7 @@ public class Node {
         this.rightSubNode = new Node(value);
     }
 
-
+    public static void setIndexCount(int indexCount) {
+        Node.indexCount = indexCount;
+    }
 }

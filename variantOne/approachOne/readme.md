@@ -28,7 +28,7 @@ will be like:
 
 ![](https://i.gyazo.com/e300ffc0e5517382fea2ddd3e2416742.png)
 
-We can do other way, eg. from left to right by each row.
+We can do it other way, eg. from left to right by each row.
 
 ## Functions
 Almost every function is using recursion and is getting deeper into every node to exam it, sum/count/whatever and return with that value/list.

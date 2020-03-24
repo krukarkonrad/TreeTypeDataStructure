@@ -6,6 +6,7 @@ public class Tree {
     Node root;
 
     Tree(int value) {
+        Node.setIndexCount(0);
         root = new Node(value);
     }
 
