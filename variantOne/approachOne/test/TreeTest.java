@@ -2,7 +2,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-
 public class TreeTest {
 
     private Tree temp = testCreateTree();

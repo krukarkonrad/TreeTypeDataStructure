@@ -2,7 +2,8 @@
 
 While we are building our tree, every new node gets a new pre-incremented index which is assigned to its.
 
-####Example
+#### Example
+
 This tree:
 ![](https://i.gyazo.com/3724268d75f91481ba2badf68ae6019b.png)
 
