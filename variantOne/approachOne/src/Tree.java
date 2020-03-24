@@ -21,7 +21,7 @@ public class Tree {
         private Node leftSubNode ;
         private Node rightSubNode;
 
-        public Node(int value){
+        private Node(int value){
             this.index = indexCount;
             indexCount++;
 
@@ -32,9 +32,8 @@ public class Tree {
 
         @Override
         public String toString(){
-
-            return ("Node " + index +
-                    "\n{value: " + this.value +
+            return ("\nNode index " + index +
+                    "{value: " + this.value +
                     " left"+index+"Node: " + this.leftSubNode +
                     " right"+index+"Node: " + this.rightSubNode + "}"
             );
@@ -70,58 +69,57 @@ public class Tree {
 
     }
 
-    private Node findNodeByIndex(int index){
-        return findNodeByIndexRecursion(this.root, index);
-    }
+        private Node findNodeByIndex(int index){
+            return findNodeByIndexRecursion(this.root, index);
+        }
 
-    private Node findNodeByIndexRecursion(Node node, int index){
-        if(node.getIndex() == index){
-            return node;
+        private Node findNodeByIndexRecursion(Node node, int index){
+            if(node.getIndex() == index){
+                return node;
+            }
+            Node toReturn = null;
+            if(node.getLeftSubNode() != null){
+                toReturn = findNodeByIndexRecursion(node.getLeftSubNode(), index);
+                if(toReturn != null) return toReturn;
+            }
+            if(node.getRightSubNode() != null){
+                toReturn = findNodeByIndexRecursion(node.getRightSubNode(),index);
+                if(toReturn != null) return toReturn;
+            }
+            return toReturn;
         }
-        Node toReturn = null;
-        if(node.getLeftSubNode() != null){
-            toReturn = findNodeByIndexRecursion(node.getLeftSubNode(), index);
-            if(toReturn != null) return toReturn;
-        }
-        if(node.getRightSubNode() != null){
-            toReturn = findNodeByIndexRecursion(node.getRightSubNode(),index);
-            if(toReturn != null) return toReturn;
-        }
-        return toReturn;
-    }
-
 
     public int sumSubtreeByIndex(int index){
         Node subtree = this.findNodeByIndex(index);
         return sumSubtree(subtree);
     }
 
-    private int sumSubtree(Node node){
-        int sum = 0;
-        if(node.getLeftSubNode() != null){
-            sum += sumSubtree(node.getLeftSubNode());
+        private int sumSubtree(Node node){
+            int sum = 0;
+            if(node.getLeftSubNode() != null){
+                sum += sumSubtree(node.getLeftSubNode());
+            }
+            if(node.getRightSubNode() != null){
+                sum += sumSubtree(node.getRightSubNode());
+            }
+            return node.getValue() + sum;
         }
-        if(node.getRightSubNode() != null){
-            sum += sumSubtree(node.getRightSubNode());
-        }
-        return node.getValue() + sum;
-    }
 
     public double averageValueByIndex(int index){
         Node temp = findNodeByIndex(index);
         return (double)sumSubtree(temp)/(double)sizeOfTree(temp);
     }
 
-    private int sizeOfTree(Node node){
-        int counter = 0;
-        if(node.getLeftSubNode() != null){
-            counter += sizeOfTree(node.getLeftSubNode());
+        private int sizeOfTree(Node node){
+            int counter = 0;
+            if(node.getLeftSubNode() != null){
+                counter += sizeOfTree(node.getLeftSubNode());
+            }
+            if(node.getRightSubNode() != null){
+                counter += sizeOfTree(node.getRightSubNode());
+            }
+            return counter + 1;
         }
-        if(node.getRightSubNode() != null){
-            counter += sizeOfTree(node.getRightSubNode());
-        }
-        return counter + 1;
-    }
 
     public double medianValueByIndex(int index){
         Node temp = findNodeByIndex(index);
@@ -134,17 +132,17 @@ public class Tree {
         }
     }
 
-    private List<Integer> listOfValues(Node node){
-        List<Integer> temp = new ArrayList<Integer>();
-        if(node.getLeftSubNode() != null){
-            temp.addAll(listOfValues(node.getLeftSubNode()));
+        private List<Integer> listOfValues(Node node){
+            List<Integer> temp = new ArrayList<Integer>();
+            if(node.getLeftSubNode() != null){
+                temp.addAll(listOfValues(node.getLeftSubNode()));
+            }
+            if(node.getRightSubNode() != null){
+                temp.addAll(listOfValues(node.getRightSubNode()));
+            }
+            temp.add(node.getValue());
+            return temp;
         }
-        if(node.getRightSubNode() != null){
-            temp.addAll(listOfValues(node.getRightSubNode()));
-        }
-        temp.add(node.getValue());
-        return temp;
-    }
 
     @Override
     public String toString() {

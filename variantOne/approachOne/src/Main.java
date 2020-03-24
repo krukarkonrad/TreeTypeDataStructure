@@ -9,9 +9,6 @@ public class Main {
         tree.root.getLeftSubNode().setLeftSubNode(2); //index 2 and so on
         tree.root.getLeftSubNode().setRightSubNode(5);
 
-        Tree newTree = new Tree(2);
-        newTree.root.setRightSubNode(2);
-
         //R0
         tree.root.setRightSubNode(7);
         tree.root.getRightSubNode().setLeftSubNode(1);
@@ -22,10 +19,7 @@ public class Main {
         //R2
         tree.root.getRightSubNode().getRightSubNode().getRightSubNode().setRightSubNode(5);
 
-        System.out.println(tree.toString());
-        System.out.println(newTree.toString());
-
-        //Menu.showMenu(tree);
+        Menu.showMenu(tree);
 
     }
 }

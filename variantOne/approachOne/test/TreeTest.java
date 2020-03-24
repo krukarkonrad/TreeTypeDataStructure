@@ -5,24 +5,24 @@ import static org.junit.Assert.assertEquals;
 
 public class TreeTest {
 
-    private Tree temp = createTree();
+    private Tree temp = testCreateTree();
 
     @Test
-    public void sumSubtreeByIndex() {
+    public void sumSubtreeByIndexTest() {
         assertEquals(12, temp.sumSubtreeByIndex(3));
     }
 
     @Test
-    public void averageValueByIndex() {
+    public void averageValueByIndexTest() {
         assertEquals(3.5,temp.averageValueByIndex(7),0.00001);
     }
 
     @Test
-    public void medianValueByIndex() {
+    public void medianValueByIndexTest() {
         assertEquals(5.5, temp.medianValueByIndex(1), 0.00001);
     }
 
-        private static Tree createTree(){
+        private static Tree testCreateTree(){
 
             //Root
             Tree tree = new Tree(2);
