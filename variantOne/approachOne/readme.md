@@ -5,6 +5,9 @@ While we are building our tree, every new node gets a new pre-incremented index 
 #### Example
 
 This tree:
+
+created by function ```firstWayToBuildTree```
+
 ![](https://i.gyazo.com/3724268d75f91481ba2badf68ae6019b.png)
 
 written this way:
@@ -29,7 +32,32 @@ will be like:
 
 ![](https://i.gyazo.com/e300ffc0e5517382fea2ddd3e2416742.png)
 
-We can do it other way, eg. from left to right by each row.
+We can do it other way, eg. from left to right by each row:
+
+created by function ```secondWayToBuildTree```
+
+![](https://i.gyazo.com/123c7de0bd9aaecae6489ea573e38b9e.png)
+
+like this tree which by the way is created other way in code:
+
+```
+Tree tree = new  Tree(2); //index 0
+
+Tree.Node left1 = tree.root.setLeftSubNode(3); //index 1
+Tree.Node right1 = tree.root.setRightSubNode(8); //index 2 and so on
+
+Tree.Node left1left2 = left1.setLeftSubNode(3);
+Tree.Node left1right2 = left1.setRightSubNode(5);
+
+Tree.Node right1efr2 = right1.setLeftSubNode(3);
+Tree.Node right1right2 = right1.setRightSubNode(1);
+
+Tree.Node left1left2left3 = left1left2.setLeftSubNode(8);
+Tree.Node left1left2right3 = left1left2.setRightSubNode(6);
+Tree.Node left1right2right3 = left1right2.setRightSubNode(7);
+
+Tree.Node right1right2right3 = right1right2.setRightSubNode(2);
+```
 
 ## Functions
 Almost every function is using recursion and is getting deeper into every node to exam it, sum/count/whatever and return with that value/list.

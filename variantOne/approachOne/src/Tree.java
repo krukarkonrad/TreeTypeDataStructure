@@ -55,16 +55,18 @@ public class Tree {
             return leftSubNode;
         }
 
-        public void setLeftSubNode(int value) {
+        public Node setLeftSubNode(int value) {
             this.leftSubNode = new Node(value);
+            return this.leftSubNode;
         }
 
         public Node getRightSubNode() {
             return rightSubNode;
         }
 
-        public void setRightSubNode(int value) {
+        public Node setRightSubNode(int value) {
             this.rightSubNode = new Node(value);
+            return this.rightSubNode;
         }
 
     }

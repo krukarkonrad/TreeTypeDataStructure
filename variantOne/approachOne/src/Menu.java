@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Menu {
 
     public static void showMenu(Tree tree){
+        System.out.println(tree.toString());
         int index, choice = 0;
         Scanner in = new Scanner(System.in);
 
